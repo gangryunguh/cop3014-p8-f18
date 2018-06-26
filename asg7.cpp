@@ -18,46 +18,49 @@ const float LOW_Y     = 700.0;     // LOW  Y position for label
 const float HIGH_Y    =  50.0;     // HIGH Y position for label
 
 using namespace std;
+
+// Function prototypes - you need to implement
+void readConfig(int &numGrades, int &maxInGrade, string &filename);
+int  findNumInRange(string filename, int low, int high);
+void initFrequency(string letters[], int freqLetters[],
+                   int numGrades, string filename);
+void setCurves(sf::RectangleShape bars[],sf::Text labels[], int numGrades);
+
 /* DON'T CHANGE THE ABOVE CODE */
 
 int main() {
 
-    // STEP 1: you need to implement the following -
-    //
     int numGrades  = 5;   // number of different letter grades
     int maxInGrade = 20;  // maximum number of students in any letter grade
     string filename;      // name of input file containing scores
 
-
-    /* IMPLEMENT your code that initializes (1) numGrades, (2) maxInGrade, and
-     *                                      (3) filename
-     */
-
-
-    // STEP 2: you need to implement a function(s) that
+    // STEP 1:
+    // IMPLEMENT readConfig that initializes (1) numGrades, (2) maxInGrade, and
+    //                                       (3) filename
     //
     string letters[numGrades];   // each entry represents string representing the grade
     int freqLetters[numGrades];  // each entry records occurrence of grades corresponding
                                  // to the letter grade
 
-    /* IMPLEMENT your code that initializes letters[] and freqLetters[] by processing
-     * input file (filename) -
-     *    you are required to re-implement the following initialization
-     */
+    // STEP 2:
+    // IMPLEMENT initFrequency that initializes letters[] and freqLetters[] by processing
+    //                              input file (filename).
+    // You need to replace the following for loop with a call to initFrequency
+    //
     for (int i = 0; i < numGrades; i++) {
         letters[i] = 'A'+i;
         freqLetters[i] = 15+i;
     }
 
-    /*
-     * DON'T CHANGE FOLLOWING CODE
-     */
+    //
+    // DON'T CHANGE FOLLOWING CODE
+    //
     sf::RenderWindow window(sf::VideoMode(600, 800), "Grade Histogram");
     sf::Font font;
     font.loadFromFile("resources/arial.ttf");
     /* DON'T CHANGE ABOVE CODE */
 
-    /* You are free to change the following code. However, as it is, it should work */
+    // You are free to change the following code. However, as it is, it should work
     sf::Text min, max;
     min.setFillColor(sf::Color::Yellow);
     min.setFont(font);
@@ -73,6 +76,10 @@ int main() {
     sf::RectangleShape bars[numGrades];
     sf::Text labels[numGrades];
 
+    // STEP 3:
+    // IMPLEMENT setTheCurves and replace the following initialization
+    //                            code with a call to setTheCurves
+    //
     float x_incr = (WIDTH - 100)/numGrades;
     float x_offset = LEFT_X+FONT_SIZE;
     float height_unit_pixels = (HEIGHT - (HIGH_Y + FONT_SIZE)) / maxInGrade;
@@ -92,6 +99,7 @@ int main() {
         x_offset += x_incr;
     }
 
+    /* DON'T CHANGE THE FOLLOWING CODE */
     while (window.isOpen()) {
         sf::Event event;
 
