@@ -95,7 +95,7 @@ int main() {
         labels[i].setString(letters[i]);
         labels[i].setCharacterSize(FONT_SIZE);
         labels[i].setFillColor(sf::Color::Red);
-        labels[i].setPosition(x_offset+(x_incr/2)-FONT_SIZE, LOW_Y+FONT_SIZE);
+        labels[i].setPosition(bars[i].getPosition().x-FONT_SIZE, LOW_Y+FONT_SIZE);
         x_offset += x_incr;
     }
 
