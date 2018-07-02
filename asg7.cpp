@@ -25,7 +25,7 @@ int  findNumInRange(string filename, int low, int high);
 void initFrequency(string letters[], int freqLetters[],
                    int numGrades, string filename);
 void setCurves(sf::RectangleShape bars[], sf::Text labels[], int freqLetters[],
-               int numGrades, int maxInGrades);
+               string letters[], sf::Font &font, int numGrades, int maxInGrades);
 
 /* DON'T CHANGE THE ABOVE CODE */
 
