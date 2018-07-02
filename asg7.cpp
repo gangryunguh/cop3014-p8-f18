@@ -24,7 +24,8 @@ void readConfig(int &numGrades, int &maxInGrade, string &filename);
 int  findNumInRange(string filename, int low, int high);
 void initFrequency(string letters[], int freqLetters[],
                    int numGrades, string filename);
-void setCurves(sf::RectangleShape bars[],sf::Text labels[], int numGrades);
+void setCurves(sf::RectangleShape bars[], sf::Text labels[], int freqLetters[],
+               int numGrades, int maxInGrades);
 
 /* DON'T CHANGE THE ABOVE CODE */
 
