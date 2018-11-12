@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-set(PROJECT_NAME asg7)
+set(PROJECT_NAME asg8)
 project(${PROJECT_NAME})
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
@@ -7,7 +7,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 endif (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
 set(CMAKE_CXX_STANDARD 11)
-set(SOURCE_FILES asg7.cpp)
+set(SOURCE_FILES SettingTheCurve.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
