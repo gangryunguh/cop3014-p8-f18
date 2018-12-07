@@ -36,6 +36,8 @@ void readConfig(int &numGrades, int &maxInGrade, string &filename);
 int  findNumInRange(string filename, int low, int high); // Utility function which being called
                                                          // within initFrequency to initialize each
                                                          // letter grade frequency
+                                                         // - findNumInRange needs to be called numGrades
+                                                         //   time inside initFrequency.
 void initFrequency(string letters[], int freqLetters[],
                    int numGrades, string filename);
 void setCurves(sf::RectangleShape bars[], sf::Text labels[], int freqLetters[],
