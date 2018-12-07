@@ -33,7 +33,9 @@ using namespace std;
 
 // Function prototypes - you need to implement
 void readConfig(int &numGrades, int &maxInGrade, string &filename);
-int  findNumInRange(string filename, int low, int high);
+int  findNumInRange(string filename, int low, int high); // Utility function which being called
+                                                         // within initFrequency to initialize each
+                                                         // letter grade frequency
 void initFrequency(string letters[], int freqLetters[],
                    int numGrades, string filename);
 void setCurves(sf::RectangleShape bars[], sf::Text labels[], int freqLetters[],
