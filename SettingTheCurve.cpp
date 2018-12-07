@@ -90,7 +90,7 @@ int main() {
     sf::Text labels[numGrades];
 
     // STEP 3:
-    // IMPLEMENT setTheCurves and replace the following initialization
+    // IMPLEMENT setCurves and replace the following initialization
     //                            code with a call to setTheCurves
     //
     float x_incr = (WIDTH - 100)/numGrades;
